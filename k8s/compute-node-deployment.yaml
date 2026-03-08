@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legionx-node
+  namespace: legionx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: legionx-node
+  template:
+    metadata:
+      labels:
+        app: legionx-node
+    spec:
+      containers:
+        - name: legionx-node
+          image: legionx-node:latest
+          resources:
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+            requests:
+              cpu: "1"
+              memory: "1Gi"
