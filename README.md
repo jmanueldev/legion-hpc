@@ -1,30 +1,5 @@
-# legion-hpc
-LEGION: Strategic HPC Orchestration Architecture
+#  LEGION: Strategic HPC Orchestration Architecture
 LEGION: Layered Execution Grid for Intelligent Orchestration of Nodes
-
-A distributed orchestration system for exascale and heterogeneous HPC clusters inspired by ancient battlefield strategy.
-
-Goal:
-- Replace queue-based scheduling with mission-based strategic orchestration
-- Dynamically reshape compute topology
-- Enable 100k–1M node clusters
-
-# 1. System Overview
-Core Principles
-LEGION introduces four fundamental ideas:
-- Mission-Oriented Scheduling
-- Formation-Based Execution Topology
-- Distributed Strategic Intelligence
-- Data Supply Logistics
-
-Traditional systems like:
-Kubernetes
-Slurm Workload Manager
-treat compute as static resources.
-
-LEGION treats them as strategic forces.
-
-# 🚀 LEGION: Strategic HPC Orchestration Architecture
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -34,12 +9,12 @@ LEGION treats them as strategic forces.
 
 **LEGION** is a next-generation **High-Performance Computing (HPC) orchestration architecture** designed for **planetary-scale distributed clusters**, integrating:
 
-- ✅ Adaptive scheduling for GPU/RDMA-aware nodes  
-- ✅ Mission-based workload orchestration  
-- ✅ Reinforcement-learning optimizer that adapts topology dynamically from live telemetry  
-- ✅ Checkpointing and fault-tolerant execution  
-- ✅ Web-based topology visualization and editor  
-- ✅ Planetary-scale simulation for multi-region HPC experimentation  
+- Adaptive scheduling for GPU/RDMA-aware nodes  
+- Mission-based workload orchestration  
+- Reinforcement-learning optimizer that adapts topology dynamically from live telemetry  
+- Checkpointing and fault-tolerant execution  
+- Web-based topology visualization and editor  
+- Planetary-scale simulation for multi-region HPC experimentation  
 
 LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspired by strategic orchestration principles.
 
