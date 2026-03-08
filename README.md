@@ -169,26 +169,6 @@ This structure allows Legion to dynamically respond to workload demands, hardwar
 - Local caching to reduce network load
 
 ---
-
-## Campaign Lifecycle
-
-1. **Intelligence Gathering** – Node status, energy, predicted demand  
-2. **Strategic Planning** – RL agent allocates clusters to tasks  
-3. **Tactical Deployment** – Cluster orchestrators form “formations”  
-4. **Real-Time Battle** – Dynamic node reassignment and load balancing  
-5. **Debrief** – Log performance, energy, and SLA metrics  
-
-**Example: Phalanx Formation Algorithm**
-
-```python
-def form_phalanx(nodes, workload):
-    features = [[n.cpu, n.gpu, n.ram, n.network_bw] for n in nodes]
-    clusters = KMeans(n_clusters=workload.size).fit(features)
-    return clusters.labels_
----
-
-***
-
 ## Quick Start
 
 ### Docker
@@ -216,4 +196,21 @@ kubectl apply -f k8s/hpa.yaml
 - Self-healing nodes  
 - Fully containerized & Kubernetes deployable  
 
+---
+
+## Campaign Lifecycle
+
+1. **Intelligence Gathering** – Node status, energy, predicted demand  
+2. **Strategic Planning** – RL agent allocates clusters to tasks  
+3. **Tactical Deployment** – Cluster orchestrators form “formations”  
+4. **Real-Time Battle** – Dynamic node reassignment and load balancing  
+5. **Debrief** – Log performance, energy, and SLA metrics  
+
+**Example: Phalanx Formation Algorithm**
+
+```python
+def form_phalanx(nodes, workload):
+    features = [[n.cpu, n.gpu, n.ram, n.network_bw] for n in nodes]
+    clusters = KMeans(n_clusters=workload.size).fit(features)
+    return clusters.labels_
 ---
