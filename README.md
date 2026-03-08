@@ -186,6 +186,9 @@ def form_phalanx(nodes, workload):
     clusters = KMeans(n_clusters=workload.size).fit(features)
     return clusters.labels_
 ---
+
+***
+
 ## Quick Start
 
 ### Docker
