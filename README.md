@@ -185,3 +185,12 @@ def form_phalanx(nodes, workload):
     features = [[n.cpu, n.gpu, n.ram, n.network_bw] for n in nodes]
     clusters = KMeans(n_clusters=workload.size).fit(features)
     return clusters.labels_
+
+
+
+### Layer Descriptions
+
+- **Strategic Orchestrator (Generals):** Oversees global resource allocation, campaign planning via reinforcement learning AI, and SLA/policy enforcement.  
+- **Cluster Orchestrator (Legion Commanders):** Manages node groups, schedules tasks, and handles fault isolation.  
+- **Node Orchestrator (Centurions):** Executes tasks on individual nodes, collects telemetry, and performs self-healing.  
+- **Compute Node (Soldiers):** Actual computation units equipped with CPU/GPU/FPGA, local storage, and network I/O.  
