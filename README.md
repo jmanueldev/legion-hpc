@@ -186,3 +186,17 @@ def form_phalanx(nodes, workload):
     clusters = KMeans(n_clusters=workload.size).fit(features)
     return clusters.labels_
 
+## Quick Start
+
+### Docker
+```bash
+docker build -t legionx-node:latest ./docker
+docker run --rm legionx-node:latest
+
+### Kubernetes
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/compute-node-deployment.yaml
+kubectl apply -f k8s/strategic-deployment.yaml
+kubectl apply -f k8s/cluster-orchestrator-service.yaml
+kubectl apply -f k8s/hpa.yaml
