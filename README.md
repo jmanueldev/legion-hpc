@@ -43,37 +43,35 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 
 ---
 
-## System Architecture
+## System Architecture (Visual Diagram)
 
+```mermaid
+graph TD
+    A[Strategic Orchestrator (Generals)] -->|Commands| B[Cluster Orchestrator (Legion Commanders)]
+    B -->|Deploys Tasks| C[Node Orchestrator (Centurions)]
+    C -->|Executes Workloads| D[Compute Nodes (Soldiers)]
 
-+------------------------------------------------------------+
-| Strategic Orchestrator (Generals) |
-| - RL AI & Global Scheduler |
-| - Policy Engine (SLAs, Energy, Priority) |
-+----------------------+-----------------+-----------------+
-| |
-+-------------+-------------+ |
-| Cluster Orchestrator | |
-| (Legion Commanders) | |
-| - Node Grouping Engine | |
-| - Task Queue Manager | |
-| - Fault Isolation | |
-+------+---------------------+ |
-| |
-+--------+--------+ |
-| Node Orchestrator | |
-| (Centurions) | |
-| - Execution Agent| |
-| - Telemetry Agent| |
-| - Self-healing | |
-+--------+--------+ |
-| |
-+------+-------+ |
-| Compute Node | (Soldiers) |
-| - CPU/GPU/FPGA | |
-| - Local Storage| |
-| - Network I/O | |
-+----------------+---------------+
+    subgraph Strategic Layer
+        A
+    end
+
+    subgraph Cluster Layer
+        B
+    end
+
+    subgraph Node Layer
+        C
+    end
+
+    subgraph Execution Layer
+        D
+    end
+
+    %% Optional annotations for clarity
+    A ---|RL AI & Policy Engine| A1[Decision Intelligence]
+    B ---|Telemetry Aggregation| B1[Cluster Health Monitor]
+    C ---|Self-Healing & Task Execution| C1[Node Health Monitor]
+    D ---|CPU/GPU/FPGA/Quantum| D1[Compute Resources]
 
 
 ---
