@@ -46,6 +46,35 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 ## System Architecture
 
 Legion follows a **hierarchical command structure** to orchestrate HPC resources. Each layer has distinct responsibilities, inspired by ancient war roles.
++------------------------------------------------------------+
+| Strategic Orchestrator (Generals)                          |
+|  - Reinforcement Learning AI                               |
+|  - Global Resource Scheduler                               |
+|  - Policy Engine (SLAs, Energy, Priority)                 |
++----------------------+-----------------+-----------------+
+                       |                 |
+         +-------------+-------------+   |
+         | Cluster Orchestrator      |   |
+         | (Legion Commanders)       |   |
+         |  - Node Grouping Engine    |   |
+         |  - Task Queue Manager      |   |
+         |  - Fault Isolation         |   |
+         +------+---------------------+   |
+                |                         |
+       +--------+--------+                |
+       | Node Orchestrator |              |
+       | (Centurions)     |              |
+       | - Execution Agent|              |
+       | - Telemetry Agent|              |
+       | - Self-healing   |              |
+       +--------+--------+                |
+                |                         |
+         +------+-------+                  |
+         | Compute Node | (Soldiers)      |
+         |  - CPU/GPU/FPGA |               |
+         |  - Local Storage|               |
+         |  - Network I/O  |               |
+         +----------------+---------------+
 
 ### 1. Strategic Orchestrator (Generals)
 - **Role:** Highest command layer overseeing campaigns across clusters.
@@ -94,7 +123,7 @@ Legion follows a **hierarchical command structure** to orchestrate HPC resources
 
 ### Architecture Summary
 
-LegionX orchestrates HPC resources in a **top-down command hierarchy**, where:
+Legion orchestrates HPC resources in a **top-down command hierarchy**, where:
 - **Generals** make strategic decisions
 - **Legion Commanders** manage tactical deployments
 - **Centurions** oversee execution and health of individual nodes
@@ -102,7 +131,7 @@ LegionX orchestrates HPC resources in a **top-down command hierarchy**, where:
 
 This structure allows Legion to dynamically respond to workload demands, hardware failures, and energy constraints, creating a resilient, adaptive, and intelligent HPC system.
 
-## LegionX System Architecture
+## Legion System Architecture
 
 | Layer | Role | Key Components |
 |-------|------|----------------|
