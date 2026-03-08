@@ -188,7 +188,6 @@ kubectl apply -f k8s/strategic-deployment.yaml
 kubectl apply -f k8s/telemetry-deployment.yaml
 kubectl apply -f k8s/hpa.yaml
 
----
 
 ✅ **Result**:  
 - RL-based strategic decision-making  
@@ -196,7 +195,6 @@ kubectl apply -f k8s/hpa.yaml
 - Self-healing nodes  
 - Fully containerized & Kubernetes deployable  
 
----
 
 ## Campaign Lifecycle
 
