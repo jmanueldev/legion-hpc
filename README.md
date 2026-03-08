@@ -185,18 +185,32 @@ def form_phalanx(nodes, workload):
     features = [[n.cpu, n.gpu, n.ram, n.network_bw] for n in nodes]
     clusters = KMeans(n_clusters=workload.size).fit(features)
     return clusters.labels_
-
+---
 ## Quick Start
 
 ### Docker
 ```bash
-docker build -t legionx-node:latest ./docker
-docker run --rm legionx-node:latest
+docker build -t legionx-node ./docker
+docker build -t legionx-strategic ./docker
+docker build -t legionx-telemetry ./docker
+docker run legionx-node
+docker run legionx-strategic
+docker run legionx-telemetry
 
 ### Kubernetes
 ```bash
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/compute-node-deployment.yaml
 kubectl apply -f k8s/strategic-deployment.yaml
-kubectl apply -f k8s/cluster-orchestrator-service.yaml
+kubectl apply -f k8s/telemetry-deployment.yaml
 kubectl apply -f k8s/hpa.yaml
+
+---
+
+✅ **Result**:  
+- RL-based strategic decision-making  
+- Telemetry server for dashboards  
+- Self-healing nodes  
+- Fully containerized & Kubernetes deployable  
+
+---
