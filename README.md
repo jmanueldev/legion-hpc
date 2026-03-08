@@ -43,37 +43,89 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 
 ---
 
-## System Architecture (Visual Diagram)
+## System Architecture
 
-```mermaid
-graph TD
-    A[Strategic Orchestrator (Generals)] -->|Commands| B[Cluster Orchestrator (Legion Commanders)]
-    B -->|Deploys Tasks| C[Node Orchestrator (Centurions)]
-    C -->|Executes Workloads| D[Compute Nodes (Soldiers)]
+Legion follows a **hierarchical command structure** to orchestrate HPC resources. Each layer has distinct responsibilities, inspired by ancient war roles.
 
-    subgraph Strategic Layer
-        A
-    end
+### 1. Strategic Orchestrator (Generals)
+- **Role:** Highest command layer overseeing campaigns across clusters.
+- **Responsibilities:**
+  - Global resource allocation
+  - Reinforcement-learning-based strategic planning
+  - SLA enforcement and policy management
+- **Components:**
+  - RL AI agent for adaptive decision-making
+  - Policy engine with a domain-specific language for campaigns
+  - API layer (gRPC/Protobuf) for communication with cluster orchestrators
 
-    subgraph Cluster Layer
-        B
-    end
+### 2. Cluster Orchestrator (Legion Commanders)
+- **Role:** Mid-level command, managing groups of nodes.
+- **Responsibilities:**
+  - Forming node groups (phalanxes, flanks, reserves)
+  - Distributing tasks among nodes
+  - Fault detection and isolation
+  - Real-time telemetry aggregation
+- **Components:**
+  - Node grouping engine (multi-dimensional clustering)
+  - Task queue manager with predictive load balancing
+  - Heartbeat monitoring and failure isolation
 
-    subgraph Node Layer
-        C
-    end
+### 3. Node Orchestrator (Centurions)
+- **Role:** Local command within individual nodes.
+- **Responsibilities:**
+  - Execute containerized workloads
+  - Collect and report telemetry
+  - Apply self-healing mechanisms
+- **Components:**
+  - Task execution agent (Docker/Singularity)
+  - Telemetry agent (CPU/GPU usage, memory, network, energy)
+  - Local failover and task restart logic
 
-    subgraph Execution Layer
-        D
-    end
+### 4. Compute Nodes (Soldiers)
+- **Role:** Execution layer, performing the actual computations.
+- **Responsibilities:**
+  - Run assigned containerized workloads
+  - Support accelerators like GPUs, FPGAs, or optional quantum units
+  - Cache inputs/outputs to reduce network load
+- **Components:**
+  - CPU/GPU/FPGA/Quantum hardware
+  - Local storage (NVMe)
+  - Network I/O interface for inter-node communication
 
-    %% Optional annotations for clarity
-    A ---|RL AI & Policy Engine| A1[Decision Intelligence]
-    B ---|Telemetry Aggregation| B1[Cluster Health Monitor]
-    C ---|Self-Healing & Task Execution| C1[Node Health Monitor]
-    D ---|CPU/GPU/FPGA/Quantum| D1[Compute Resources]
+### Architecture Summary
 
+LegionX orchestrates HPC resources in a **top-down command hierarchy**, where:
+- **Generals** make strategic decisions
+- **Legion Commanders** manage tactical deployments
+- **Centurions** oversee execution and health of individual nodes
+- **Soldiers** perform the computation work
 
+This structure allows Legion to dynamically respond to workload demands, hardware failures, and energy constraints, creating a resilient, adaptive, and intelligent HPC system.
+
+## LegionX System Architecture
+
+| Layer | Role | Key Components |
+|-------|------|----------------|
+| **Strategic Orchestrator** | Generals | - RL AI & Global Scheduler<br>- Policy Engine (SLAs, Energy, Priority) |
+| **Cluster Orchestrator** | Legion Commanders | - Node Grouping Engine<br>- Task Queue Manager<br>- Fault Isolation |
+| **Node Orchestrator** | Centurions | - Execution Agent<br>- Telemetry Agent<br>- Self-healing |
+| **Compute Node** | Soldiers | - CPU/GPU/FPGA<br>- Local Storage<br>- Network I/O |
+
+- **Strategic Orchestrator (Generals)**
+  - RL AI & Global Scheduler
+  - Policy Engine (SLAs, Energy, Priority)
+  - **Cluster Orchestrator (Legion Commanders)**
+    - Node Grouping Engine
+    - Task Queue Manager
+    - Fault Isolation
+    - **Node Orchestrator (Centurions)**
+      - Execution Agent
+      - Telemetry Agent
+      - Self-healing
+      - **Compute Node (Soldiers)**
+        - CPU/GPU/FPGA
+        - Local Storage
+        - Network I/O
 ---
 
 ## Node Types
