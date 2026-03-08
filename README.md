@@ -46,35 +46,6 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 ## System Architecture
 
 Legion follows a **hierarchical command structure** to orchestrate HPC resources. Each layer has distinct responsibilities, inspired by ancient war roles.
-+------------------------------------------------------------+
-| Strategic Orchestrator (Generals)                          |
-|  - Reinforcement Learning AI                               |
-|  - Global Resource Scheduler                               |
-|  - Policy Engine (SLAs, Energy, Priority)                 |
-+----------------------+-----------------+-----------------+
-                       |                 |
-         +-------------+-------------+   |
-         | Cluster Orchestrator      |   |
-         | (Legion Commanders)       |   |
-         |  - Node Grouping Engine    |   |
-         |  - Task Queue Manager      |   |
-         |  - Fault Isolation         |   |
-         +------+---------------------+   |
-                |                         |
-       +--------+--------+                |
-       | Node Orchestrator |              |
-       | (Centurions)     |              |
-       | - Execution Agent|              |
-       | - Telemetry Agent|              |
-       | - Self-healing   |              |
-       +--------+--------+                |
-                |                         |
-         +------+-------+                  |
-         | Compute Node | (Soldiers)      |
-         |  - CPU/GPU/FPGA |               |
-         |  - Local Storage|               |
-         |  - Network I/O  |               |
-         +----------------+---------------+
 
 ### 1. Strategic Orchestrator (Generals)
 - **Role:** Highest command layer overseeing campaigns across clusters.
