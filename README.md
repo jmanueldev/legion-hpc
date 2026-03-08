@@ -20,6 +20,15 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 
 ---
 
+**Key Innovations:**
+- Hierarchical command structure inspired by military ranks
+- Tactical node grouping and task assignment
+- Reinforcement-learning-based strategic planning
+- Real-time telemetry and self-healing mechanisms
+- Optional hybrid quantum computing integration
+
+---
+
 ## Key Features
 
 | Feature | Description |
@@ -34,32 +43,95 @@ LEGION emphasizes **efficiency, resilience, and real-time optimization**, inspir
 
 ---
 
-## Architecture Overview
+## System Architecture
 
-LEGION is organized into **modular layers**:
 
-1. **API Layer (Go)** – REST endpoints for missions, nodes, telemetry.  
-2. **Scheduler Layer (Go)** – GPU/RDMA-aware node selection and topology generation.  
-3. **Node Agents (Rust)** – Telemetry collection, mission execution, fault detection.  
-4. **AI RL Optimizer (Python)** – Learns live from telemetry, continuously improves topology.  
-5. **Web Dashboard (React + D3.js)** – Cluster visualization, telemetry graphs, topology editor.  
-6. **Planetary Simulation (Python)** – Multi-region, high-latency HPC cluster simulation.
++------------------------------------------------------------+
+| Strategic Orchestrator (Generals) |
+| - RL AI & Global Scheduler |
+| - Policy Engine (SLAs, Energy, Priority) |
++----------------------+-----------------+-----------------+
+| |
++-------------+-------------+ |
+| Cluster Orchestrator | |
+| (Legion Commanders) | |
+| - Node Grouping Engine | |
+| - Task Queue Manager | |
+| - Fault Isolation | |
++------+---------------------+ |
+| |
++--------+--------+ |
+| Node Orchestrator | |
+| (Centurions) | |
+| - Execution Agent| |
+| - Telemetry Agent| |
+| - Self-healing | |
++--------+--------+ |
+| |
++------+-------+ |
+| Compute Node | (Soldiers) |
+| - CPU/GPU/FPGA | |
+| - Local Storage| |
+| - Network I/O | |
++----------------+---------------+
+
 
 ---
 
-## Repository Structure
+## Node Types
 
-```text
-LEGION/
-├ README.md
-├ docker-compose.yml
-├ Makefile
-├ requirements.txt
-├ api/                   # REST API endpoints
-├ scheduler/             # Mission scheduling and topology
-├ node-agent/            # Rust agents running on nodes
-├ storage/               # Checkpointing & dataset management
-├ simulator/             # Planetary-scale simulation
-├ ai-optimizer/          # RL optimizer and training
-├ web-dashboard/         # React + D3.js frontend
-└ sdk/                   # Python client for submitting missions
+| Type | Role | Specs |
+|------|------|-------|
+| Infantry Nodes | CPU-heavy | 128–256 cores, 512–1024 GB RAM, NVMe storage |
+| Cavalry Nodes | GPU/AI accelerators | NVIDIA H100 / AMD MI300, NVLink/InfiniBand HDR |
+| Siege Engines | Memory & storage optimized | 4–8 TB DDR5, 1–4 PB NVMe storage |
+| Quantum Auxiliaries | Shock troops | QPU integration for hybrid quantum workloads |
+
+**Interconnect Strategy:**  
+- Low-latency fabrics: InfiniBand HDR200, NVLink  
+- Redundant mesh network for failover
+
+---
+
+## Software Stack
+
+### Strategic Orchestrator (Generals)
+- **Responsibilities:** Global resource allocation, SLA enforcement, campaign planning  
+- **Implementation:** Python + Rust, RL agent, gRPC API, DSL for campaigns  
+- **AI Model:** Transformer-based RL, reward: minimize makespan & energy usage
+
+### Cluster Orchestrator (Legion Commanders)
+- **Responsibilities:** Node grouping, task distribution, fault detection  
+- **Algorithms:**  
+  - Phalanx formation: tightly coupled nodes for latency-sensitive workloads  
+  - Flanking maneuvers: dynamic load shifting  
+- **Telemetry:** Kafka/NATS streams for cluster metrics  
+
+### Node Orchestrator (Centurions)
+- **Responsibilities:** Task execution, telemetry collection, self-healing  
+- **Features:**  
+  - Containerized workloads (Docker/Singularity)  
+  - Heartbeat monitoring & automatic task failover  
+
+### Compute Nodes (Soldiers)
+- Executes containerized workloads  
+- Supports accelerators (CPU/GPU/FPGA/Quantum)  
+- Local caching to reduce network load
+
+---
+
+## Campaign Lifecycle
+
+1. **Intelligence Gathering** – Node status, energy, predicted demand  
+2. **Strategic Planning** – RL agent allocates clusters to tasks  
+3. **Tactical Deployment** – Cluster orchestrators form “formations”  
+4. **Real-Time Battle** – Dynamic node reassignment and load balancing  
+5. **Debrief** – Log performance, energy, and SLA metrics  
+
+**Example: Phalanx Formation Algorithm**
+
+```python
+def form_phalanx(nodes, workload):
+    features = [[n.cpu, n.gpu, n.ram, n.network_bw] for n in nodes]
+    clusters = KMeans(n_clusters=workload.size).fit(features)
+    return clusters.labels_
