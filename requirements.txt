@@ -5,3 +5,5 @@ PyYAML
 grpcio
 fastapi
 uvicorn
+stable-baselines3
+gym
