@@ -1,4 +1,4 @@
-#  LEGION: Strategic HPC Orchestration Architecture
+#  LEGION: HPC Orchestration Architecture
 LEGION: Layered Execution Grid for Intelligent Orchestration of Nodes
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
