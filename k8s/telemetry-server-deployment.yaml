@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telemetry-server
+  namespace: legionx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemetry-server
+  template:
+    metadata:
+      labels:
+        app: telemetry-server
+    spec:
+      containers:
+        - name: telemetry-server
+          image: legionx-telemetry:latest
+          ports:
+            - containerPort: 8000
